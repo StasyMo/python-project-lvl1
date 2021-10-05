@@ -11,7 +11,7 @@ def calc_correct_answer(calc_number1: int, calc_number2: int,
     return calc_number1 * calc_number2
 
 
-def even_correct_answer(question_number):
+def even_correct_answer(question_number: int):
     """Calculate the correct answer for brain-even. Returns correct answer."""
     if question_number % 2:
         return 'no'
@@ -42,3 +42,16 @@ def progression_correct_answer(progression: list,
         else:
             print(progression[i], end=' ')
     return progression[missed_elem]
+
+
+def prime_correct_answer(question_number: int):
+    """Calculate the correct answer for brain-prime. Returns correct answer."""
+    prime_answer = 1
+    step_prime = 1
+    while step_prime <= question_number / 2:
+        if question_number % step_prime == 0:
+            prime_answer = step_prime
+        step_prime += 1
+    if prime_answer == 1:
+        return 'yes'
+    return 'no'
