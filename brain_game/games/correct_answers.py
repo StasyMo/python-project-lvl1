@@ -19,6 +19,7 @@ def even_correct_answer(question_number):
 
 
 def gcd_correct_answer(gcd_number1: int, gcd_number2: int):
+    """Calculate the correct answer for brain-gcd. Returns correct answer."""
     if gcd_number1 < gcd_number2:
         minimal_number_gcd = gcd_number1
     else:
