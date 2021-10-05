@@ -28,3 +28,17 @@ def gcd_correct_answer(gcd_number1: int, gcd_number2: int):
         if gcd_number1 % number == 0 and gcd_number2 % number == 0:
             gcd = number
     return gcd
+
+
+def progression_correct_answer(progression: list,
+                               progression_step: int, missed_elem: int, i: int,
+                               progression_length: int):
+    while i < 10:
+        progression[i] = progression[i - 1] + progression_step
+        i += 1
+    for i in range(progression_length):
+        if i == missed_elem:
+            print('.. ', end='')
+        else:
+            print(progression[i], end=' ')
+    return progression[missed_elem]
