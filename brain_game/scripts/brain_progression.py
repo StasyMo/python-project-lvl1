@@ -1,7 +1,7 @@
 """Script of game gcd."""
 
 from random import randint
-from brain_game.cli import brain_games
+from brain_game.scripts import brain_games
 from brain_game.games.check_user_answer import check_answer
 from brain_game.games.correct_answers import progression_correct_answer
 
