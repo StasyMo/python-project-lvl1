@@ -1,7 +1,7 @@
 """Script of game gcd."""
 
 from random import randint
-from brain_game.scripts import brain_games
+from brain_game.cli import brain_games
 from brain_game.games.check_user_answer import check_answer
 from brain_game.games.correct_answers import progression_correct_answer
 
@@ -11,20 +11,20 @@ def main():
     user_name = brain_games.main()
     count_answers = 0
     answers_to_win = 3
-    progression_length = 10
-    number_up_range = 10
+    PROGRESSION_LENGTH = 10
+    UP_RANGE = 10
     print('What number is missing in the progression?')
     while count_answers < answers_to_win:
-        progression = [0] * progression_length
-        progression[0] = randint(0, number_up_range)
-        progression_step = randint(1, number_up_range)
-        missed_elem = randint(0, number_up_range - 1)
+        progression = [0] * PROGRESSION_LENGTH
+        progression[0] = randint(0, UP_RANGE)
+        progression_step = randint(1, UP_RANGE)
+        missed_elem = randint(0, UP_RANGE - 1)
         i = 1
         print('Question: ', end='')
         correct_answer = progression_correct_answer(progression,
                                                     progression_step,
                                                     missed_elem, i,
-                                                    progression_length)
+                                                    PROGRESSION_LENGTH)
         print('Your answer: ', end='')
         user_answer = input()
         try:

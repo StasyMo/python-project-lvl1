@@ -32,11 +32,11 @@ def gcd_correct_answer(gcd_number1: int, gcd_number2: int):
 
 def progression_correct_answer(progression: list,
                                progression_step: int, missed_elem: int, i: int,
-                               progression_length: int):
+                               PROGRESSION_LENGTH: int):
     while i < 10:
         progression[i] = progression[i - 1] + progression_step
         i += 1
-    for i in range(progression_length):
+    for i in range(PROGRESSION_LENGTH):
         if i == missed_elem:
             print('.. ', end='')
         else:
