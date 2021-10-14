@@ -7,6 +7,9 @@ repository = "https://github.com/StasyMo/python-project-lvl1"
 packages = [
   { include = "brain_game" },
 ]
+classifiers = [
+    "Development Status :: 3 - Alpha"
+]
 
 [tool.poetry.dependencies]
 python = "^3.8"

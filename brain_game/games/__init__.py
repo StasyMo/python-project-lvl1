@@ -1,1 +1,1 @@
-"""This package is for sccripts of games."""
+"""This package is for scripts of games."""
