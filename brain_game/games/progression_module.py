@@ -3,6 +3,7 @@ from brain_game.scripts import brain_games
 from brain_game.games.check_user_answer import check_answer
 from brain_game.games.correct_answers import progression_correct_answer
 
+
 def progression_game():
     user_name = brain_games.main()
     count_answers = 0
