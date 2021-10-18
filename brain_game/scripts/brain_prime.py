@@ -1,10 +1,10 @@
 """Script of game prime."""
-from brain_game.games.prime_module import prime_game
+from brain_game.games.engine_of_game import engine_of_game
 
 
 def main():
     """Do the game and returns on screen the result of game of user."""
-    prime_game()
+    engine_of_game('prime')
 
 
 if __name__ == '__main__':

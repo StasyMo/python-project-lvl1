@@ -1,14 +1,10 @@
 from random import choice, randint
-from brain_game.scripts import brain_games
 from brain_game.games.check_user_answer import check_answer
 from brain_game.games.correct_answers import calc_correct_answer
 
 
-def calc_game():
+def calc_game(user_name, count_answers, ANSWERS_TO_WIN):
     """Do the game and returns on screen the result of game of user."""
-    user_name = brain_games.main()
-    count_answers = 0
-    ANSWERS_TO_WIN = 3
     print('What is the result of the expression?')
     while count_answers < ANSWERS_TO_WIN:
         UP_RANGE = 100
