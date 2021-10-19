@@ -1,5 +1,5 @@
 from random import randint
-from brain_game.games.check_user_answer import check_answer
+from brain_game.games.engine_of_game import comparing_answers
 from brain_game.games.correct_answers import progression_correct_answer
 
 
@@ -26,14 +26,8 @@ def progression_game(user_name, count_answers, ANSWERS_TO_WIN):
             return print("The answer might be a number, but '{0}' "
                          "is not a number ;(. \n Let's try again, "
                          "{1}!".format(user_answer, user_name))
-        count_answers = check_answer(correct_answer, user_answer, count_answers,
-                                     ANSWERS_TO_WIN, user_name)
+        count_answers = comparing_answers(correct_answer, user_answer,
+                                          count_answers,
+                                          ANSWERS_TO_WIN, user_name)
         count_answers += 1
-    if count_answers == ANSWERS_TO_WIN:
-        return 'win'
-
-    # if count_answers == answers_to_win:
-    #     # если игрок ошибкся, фукнция check_user_answer
-    #     # вернёт максимальное значение, а в
-    #     # последнем шаге while мы это значение увеличим
-    #     print('Congratulations, {}!'.format(user_name))
+    return count_answers

@@ -1,5 +1,5 @@
 from random import choice, randint
-from brain_game.games.check_user_answer import check_answer
+from brain_game.games.engine_of_game import comparing_answers
 from brain_game.games.correct_answers import calc_correct_answer
 
 
@@ -23,11 +23,8 @@ def calc_game(user_name, count_answers, ANSWERS_TO_WIN):
                          "{1}!".format(user_answer, user_name))
         correct_answer = calc_correct_answer(calc_number1,
                                              calc_number2, math_operator)
-        count_answers = check_answer(correct_answer, user_answer,
-                                     count_answers, ANSWERS_TO_WIN, user_name)
+        count_answers = comparing_answers(correct_answer, user_answer,
+                                          count_answers, ANSWERS_TO_WIN,
+                                          user_name)
         count_answers += 1
-    if count_answers == ANSWERS_TO_WIN:
-        # если игрок ошибкся, фукнция check_user_answer
-        # вернёт максимальное значение, а в
-        # последнем шаге while мы это значение увеличим
-        print('Congratulations, {}!'.format(user_name))
+    return count_answers
