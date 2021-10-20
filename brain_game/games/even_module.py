@@ -4,7 +4,7 @@ from random import randint
 rules_of_the_game = 'Answer "yes" if the number is even, otherwise answer "no".'
 
 
-def task_of_the_game(user_name: str):
+def task_of_the_game():
     number_up_range = 1000000
     question_number = randint(1, number_up_range)
     print('Question: {}'.format(question_number), '\nYour answer: ', end='')

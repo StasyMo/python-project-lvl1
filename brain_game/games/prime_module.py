@@ -5,7 +5,7 @@ rules_of_the_game = 'Answer "yes" if given number is prime. ' \
                     'Otherwise answer "no".'
 
 
-def task_of_the_game(user_name: str):
+def task_of_the_game():
     UP_RANGE = 1000
     question_number = randint(1, UP_RANGE)
     print('Question: {}'.format(question_number), '\nYour answer: ', end='')

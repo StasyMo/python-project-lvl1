@@ -4,7 +4,7 @@ from random import randint
 rules_of_the_game = 'What number is missing in the progression?'
 
 
-def task_of_the_game(user_name: str):
+def task_of_the_game():
     PROGRESSION_LENGTH = 10
     UP_RANGE = 10
     progression = [0] * PROGRESSION_LENGTH
@@ -26,8 +26,6 @@ def task_of_the_game(user_name: str):
     try:
         user_answer = int(user_answer)
     except ValueError:
-        return print("The answer might be a number, but '{0}' "
-                     "is not a number ;(. \n Let's try again, "
-                     "{1}!".format(user_answer, user_name))
+        return print('The answer might be a number')
     correct_answer = progression[missed_elem]
     return user_answer, correct_answer
