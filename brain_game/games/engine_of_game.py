@@ -1,11 +1,19 @@
 from brain_game.scripts import brain_games
 
 
-def start_the_game():
+def engine_of_game(rules_of_the_game, task_of_the_game):
     user_name = brain_games.main()
+    print(rules_of_the_game)
     count_answers = 0
     ANSWERS_TO_WIN = 3
-    return user_name, count_answers, ANSWERS_TO_WIN
+    while count_answers < ANSWERS_TO_WIN:
+        user_answer, correct_answer = task_of_the_game(user_name)
+        count_answers = comparing_answers(correct_answer, user_answer,
+                                          count_answers,
+                                          ANSWERS_TO_WIN, user_name)
+        count_answers += 1
+    if count_answers == ANSWERS_TO_WIN:
+        print('Congratulations, {}!'.format(user_name))
 
 
 def comparing_answers(correct_answer: int, user_answer: int, count_answers: int,
@@ -20,8 +28,3 @@ def comparing_answers(correct_answer: int, user_answer: int, count_answers: int,
           "\n Let's try again, "
           "{2}!".format(user_answer, correct_answer, user_name))
     return ANSWERS_TO_WIN
-
-
-def if_win_the_game(count_answers, ANSWER_TO_WIN, user_name):
-    if count_answers == ANSWER_TO_WIN:
-        print('Congratulations, {}!'.format(user_name))
