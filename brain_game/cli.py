@@ -1,6 +1,5 @@
 #!/usr/bin/env python
 """Introduce of a person."""
-
 import prompt
 
 

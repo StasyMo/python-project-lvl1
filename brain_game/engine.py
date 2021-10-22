@@ -1,13 +1,15 @@
 from brain_game.scripts import brain_games
+import prompt
 
 
-def engine_of_game(rules_of_the_game, task_of_the_game):
+def start(rules, task):
     user_name = brain_games.main()
-    print(rules_of_the_game)
+    print(rules)
     count_answers = 0
     ANSWERS_TO_WIN = 3
     while count_answers < ANSWERS_TO_WIN:
-        user_answer, correct_answer = task_of_the_game()
+        correct_answer = task()
+        user_answer = prompt.string('Your answer: ')
         count_answers = comparing_answers(correct_answer, user_answer,
                                           count_answers,
                                           ANSWERS_TO_WIN, user_name)

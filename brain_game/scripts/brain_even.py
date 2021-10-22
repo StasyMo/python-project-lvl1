@@ -1,11 +1,11 @@
 """Script of game if_even."""
-from brain_game.games.engine_of_game import engine_of_game
-from brain_game.games.even_module import rules_of_the_game, task_of_the_game
+from brain_game.engine import start
+from brain_game.games.even import rules, task
 
 
 def main():
     """Do the game and returns on screen the result of game of user."""
-    engine_of_game(rules_of_the_game, task_of_the_game)
+    start(rules, task)
 
 
 if __name__ == '__main__':
