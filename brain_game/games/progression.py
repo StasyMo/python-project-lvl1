@@ -18,8 +18,9 @@ def product_progression(PROGRESSION_LENGTH: int, UP_RANGE: int):
     progression[0] = randint(0, UP_RANGE)
     common_difference = randint(1, UP_RANGE)
     number_of_member = 1
-    while number_of_member < 10:
-        progression[number_of_member] = progression[number_of_member - 1] + common_difference
+    while number_of_member < PROGRESSION_LENGTH:
+        progression[number_of_member] = progression[number_of_member - 1] \
+                                        + common_difference
         number_of_member += 1
     return progression
 
