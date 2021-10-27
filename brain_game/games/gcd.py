@@ -3,16 +3,16 @@ from random import randint
 rules = 'Find the greatest common divisor of given numbers.'
 
 
-def task():
+def play():
     UP_RANGE = 100
     gcd_number1 = randint(1, UP_RANGE)
     gcd_number2 = randint(1, UP_RANGE)
-    print('Question: {0} {1} '.format(gcd_number1, gcd_number2))
-    gcd = if_prime(gcd_number1, gcd_number2)
-    return str(gcd)
+    question = str(gcd_number1) + ' ' + str(gcd_number2)
+    gcd = calculate_gcd(gcd_number1, gcd_number2)
+    return question, str(gcd)
 
 
-def if_prime(gcd_number1: int, gcd_number2: int):
+def calculate_gcd(gcd_number1: int, gcd_number2: int):
     if gcd_number1 < gcd_number2:
         minimal_number_gcd = gcd_number1
     else:
