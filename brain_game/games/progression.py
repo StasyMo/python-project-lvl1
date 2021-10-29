@@ -14,12 +14,11 @@ def play():
 
 
 def product_progression(PROGRESSION_LENGTH: int, UP_RANGE: int):
-    progression = [0] * PROGRESSION_LENGTH
     progression[0] = randint(0, UP_RANGE)
     common_dif = randint(1, UP_RANGE)
     num_of_member = 1
     while num_of_member < PROGRESSION_LENGTH:
-        progression[num_of_member] = progression[num_of_member - 1] + common_dif
+        progression.append(progression[i-1] + common_dif)
         num_of_member += 1
     return progression
 
