@@ -14,8 +14,7 @@ def play():
 
 
 def product_progression(PROGRESSION_LENGTH: int, UP_RANGE: int):
-    progression = []
-    progression.append(randint(0, UP_RANGE))
+    progression = [randint(0, UP_RANGE)]
     common_dif = randint(1, UP_RANGE)
     step = 1
     while step < PROGRESSION_LENGTH:
