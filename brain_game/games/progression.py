@@ -4,32 +4,26 @@ from random import randint
 rules = 'What number is missing in the progression?'
 
 
-def play():
-    PROGRESSION_LENGTH = 10
-    UP_RANGE = 10
-    progression = product_progression(PROGRESSION_LENGTH, UP_RANGE)
-    missed_elem = randint(0, PROGRESSION_LENGTH - 1)
-    question = derivate(progression, missed_elem)
-    return question, str(progression[missed_elem])
+def get_question_and_answer():
+    progression_length = 10
+    up_range = 10
+    progression = build_progression(progression_length, up_range)
+    missed_elem = randint(0, progression_length - 1)
+    correct_answer = str(progression[missed_elem])
+    question = stringify(progression, missed_elem)
+    return question, correct_answer
 
 
-def product_progression(PROGRESSION_LENGTH: int, UP_RANGE: int):
-    progression = [randint(0, UP_RANGE)]
-    common_dif = randint(1, UP_RANGE)
+def build_progression(progression_length: int, up_range: int):
+    progression = [randint(0, up_range)]
+    common_dif = randint(1, up_range)
     step = 1
-    while step < PROGRESSION_LENGTH:
+    while step < progression_length:
         progression.append(progression[step - 1] + common_dif)
         step += 1
     return progression
 
 
-def derivate(progression: list, missed_elem: int):
-    question = ''
-    for i in range(len(progression)):
-        if i == missed_elem:
-            question += '..'
-        else:
-            question += str(progression[i])
-        if i < len(progression) - 1:
-            question += ' '
-    return question
+def stringify(progression: list, missed_elem: int):
+    progression[missed_elem] = '..'
+    return " ".join(map(str, progression))

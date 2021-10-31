@@ -3,10 +3,10 @@ from random import randint
 rules = 'Find the greatest common divisor of given numbers.'
 
 
-def play():
-    UP_RANGE = 100
-    gcd_number1 = randint(1, UP_RANGE)
-    gcd_number2 = randint(1, UP_RANGE)
+def get_question_and_answer():
+    up_range = 100
+    gcd_number1 = randint(1, up_range)
+    gcd_number2 = randint(1, up_range)
     question = str(gcd_number1) + ' ' + str(gcd_number2)
     gcd = calculate_gcd(gcd_number1, gcd_number2)
     return question, str(gcd)
