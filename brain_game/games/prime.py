@@ -14,7 +14,7 @@ def get_question_and_answer():
 
 def is_prime(number: int):
     step_prime = 2
-    while step_prime <= number:
+    while step_prime <= number / 2:
         if number % step_prime == 0:
             return False
         step_prime += 1
