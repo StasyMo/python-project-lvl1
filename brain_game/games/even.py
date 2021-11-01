@@ -2,11 +2,11 @@ from random import randint
 
 
 rules = 'Answer "yes" if the number is even, otherwise answer "no".'
+NUMBER_UP_RANGE = 1000
 
 
 def get_question_and_answer():
-    number_up_range = 1000000
-    question = randint(1, number_up_range)
+    question = randint(1, NUMBER_UP_RANGE)
     correct_answer = 'yes' if is_even(question) else 'no'
     return question, correct_answer
 

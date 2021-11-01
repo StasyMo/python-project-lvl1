@@ -3,11 +3,11 @@ from random import randint
 
 rules = 'Answer "yes" if given number is prime. ' \
         'Otherwise answer "no".'
+UP_RANGE = 1000
 
 
 def get_question_and_answer():
-    up_range = 1000
-    question = randint(1, up_range)
+    question = randint(1, UP_RANGE)
     correct_answer = 'yes' if is_prime(question) else 'no'
     return question, correct_answer
 
