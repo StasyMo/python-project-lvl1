@@ -2,23 +2,23 @@ from random import randint
 
 
 rules = 'What number is missing in the progression?'
+PROGRESSION_LENGTH = 10
+UP_RANGE = 10
 
 
 def get_question_and_answer():
-    progression_length = 10
-    up_range = 10
-    progression = build_progression(progression_length, up_range)
-    missed_elem = randint(0, progression_length - 1)
+    common_dif = randint(1, UP_RANGE)
+    progression = build_progression(common_dif)
+    missed_elem = randint(0, PROGRESSION_LENGTH - 1)
     correct_answer = str(progression[missed_elem])
     question = stringify(progression, missed_elem)
     return question, correct_answer
 
 
-def build_progression(progression_length: int, up_range: int):
-    progression = [randint(0, up_range)]
-    common_dif = randint(1, up_range)
+def build_progression(common_dif: int):
+    progression = [randint(0, PROGRESSION_LENGTH)]
     step = 1
-    while step < progression_length:
+    while step < PROGRESSION_LENGTH:
         progression.append(progression[step - 1] + common_dif)
         step += 1
     return progression
